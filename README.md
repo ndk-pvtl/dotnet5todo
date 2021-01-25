@@ -3,10 +3,11 @@
 Small .NET 5 todo app that can be pushed to Cloud Foundry
 
 ## Prereqs
+* Linux/Mac OS (did not test w/ Windows PCs)
 * `.NET 5` installed locally
 * `Docker` installed locally
 * `CF cli` installed locally
-* Linux/Mac OS (did not test w/ Windows PCs)
+* `npm` for frontend
 * Your Cloud Foundry instance has `binary_buildpack`
 
 *Note*: make sure that all prereq apps are in the path
