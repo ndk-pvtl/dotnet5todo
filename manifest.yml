@@ -1,0 +1,7 @@
+applications:
+- name: dotnet-todo
+  memory: 512M
+  path: ./bin/Release/net5.0/linux-x64
+  command: sh start.sh
+  buildpacks:
+    - binary_buildpack
