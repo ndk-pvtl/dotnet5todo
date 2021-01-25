@@ -13,3 +13,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+
+## Frontend ignores
+node_modules/
+build/
