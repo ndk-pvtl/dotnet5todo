@@ -1,0 +1,5 @@
+obj/
+build/
+.vscode/
+.git/
+small-todo-frontend/

@@ -30,6 +30,11 @@ namespace smallTodoApi
         {
             var connection = Configuration.GetConnectionString("db");
             services.AddDbContext<TodoContext>(opt => opt.UseMySql(connection, ServerVersion.AutoDetect(connection)));
+            services.AddCors(cors => cors.AddPolicy("Everything", cors => {
+                cors.AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin();
+            }));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -51,10 +56,8 @@ namespace smallTodoApi
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseCors("Everything");
+            app.UseEndpoints(e => e.MapControllers());
         }
     }
 }
